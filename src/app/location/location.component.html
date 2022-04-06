@@ -1,0 +1,15 @@
+<p>Location: {{ locationId }}</p>
+<table>
+    <tr>
+      <th>Id</th>  
+      <th>Title</th>
+      <th>Price</th>
+      <th>Variations at this location</th>
+    </tr>
+    <tr *ngFor="let product of products$ | async">
+        <td>{{ product.id }}</td>
+        <td><a [routerLink]="['/variations', product.id]" routerLinkActive="active">{{ product.name }}</a></td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.variations.length }} <a [routerLink]="['/variations', product.id]" routerLinkActive="active">See all</a></td>
+    </tr>
+</table>

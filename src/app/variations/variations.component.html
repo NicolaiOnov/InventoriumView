@@ -1,0 +1,20 @@
+<p>Variations of product #{{ productId }}</p>
+
+<table>
+    <tr>
+      <th>Id</th>  
+      <th>Title</th>
+      <th>Price</th>
+      <th>SKU</th>
+      <th>Locations</th>
+    </tr>
+    <tr *ngFor="let variation of variations$ | async">
+        <td>{{ variation.id }}</td>
+        <td>{{ variation.name }}</td>
+        <td>{{ variation.price }}</td>
+        <td>{{ variation.sku }}</td>
+        <td>{{ variation.localVariationQuantities.length }} 
+            <a [routerLink]="['/localVariationQuantities', variation.id]" routerLinkActive="active">See all</a>
+        </td>
+    </tr>
+</table>

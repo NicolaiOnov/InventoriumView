@@ -1,0 +1,12 @@
+<p>Local Quantities of variation #{{ variationId }}</p>
+<table>
+    <tr>
+      <th>Location</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let localVariationQuantity of localVariationQuantities$ | async">
+        <td><a [routerLink]="['/locations', localVariationQuantity.location.id]" routerLinkActive="active">{{ localVariationQuantity.location.name }}</a></td>
+        <td>{{ localVariationQuantity.quantity }}</td>
+    </tr>
+</table>

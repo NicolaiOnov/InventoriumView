@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th>Id</th>  
+      <th>Title</th>
+      <th>Price</th>
+      <th>Variations</th>
+    </tr>
+    <tr *ngFor="let product of products$ | async">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.variations.length }} <a [routerLink]="['/variations', product.id]" routerLinkActive="active">See all</a></td>
+    </tr>
+</table>
